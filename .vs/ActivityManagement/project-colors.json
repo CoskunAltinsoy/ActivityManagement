@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "bf450e4e-07e7-4029-a7dc-0f1f6ea18ed6": {
+      "ProjectGuid": "bf450e4e-07e7-4029-a7dc-0f1f6ea18ed6",
+      "DisplayName": "ActivityManagement.Domain",
+      "ColorIndex": 0
+    },
+    "5677bbe9-aff3-4da2-8b92-782d68c65371": {
+      "ProjectGuid": "5677bbe9-aff3-4da2-8b92-782d68c65371",
+      "DisplayName": "ActivityManagement.Application",
+      "ColorIndex": 1
+    },
+    "a2824446-5990-420b-a5f9-255b3758d293": {
+      "ProjectGuid": "a2824446-5990-420b-a5f9-255b3758d293",
+      "DisplayName": "ActivityManagement.Infrastructure",
+      "ColorIndex": 2
+    },
+    "86d71281-b707-4b56-8af4-c70885726d62": {
+      "ProjectGuid": "86d71281-b707-4b56-8af4-c70885726d62",
+      "DisplayName": "ActivityManagement.WebApi",
+      "ColorIndex": 3
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 4
+}

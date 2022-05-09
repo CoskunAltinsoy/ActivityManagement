@@ -1,0 +1,12 @@
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\bin\Debug\net5.0\ActivityManagement.Domain.deps.json
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\bin\Debug\net5.0\ActivityManagement.Domain.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\bin\Debug\net5.0\ref\ActivityManagement.Domain.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\bin\Debug\net5.0\ActivityManagement.Domain.pdb
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.csproj.AssemblyReference.cache
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.AssemblyInfoInputs.cache
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.AssemblyInfo.cs
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.csproj.CoreCompileInputs.cache
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ref\ActivityManagement.Domain.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Domain\obj\Debug\net5.0\ActivityManagement.Domain.pdb

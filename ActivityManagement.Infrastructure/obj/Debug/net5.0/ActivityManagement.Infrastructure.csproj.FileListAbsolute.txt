@@ -16,3 +16,5 @@ C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure\obj\Debug\net5.0\ref\ActivityManagement.Infrastructure.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure\obj\Debug\net5.0\ActivityManagement.Infrastructure.pdb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure\obj\Debug\net5.0\ActivityManagement.Infrastructure.genruntimeconfig.cache
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure\bin\Debug\net5.0\ActivityManagement.Application.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.Infrastructure\bin\Debug\net5.0\ActivityManagement.Application.pdb

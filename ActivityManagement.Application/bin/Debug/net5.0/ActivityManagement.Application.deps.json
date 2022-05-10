@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "ActivityManagement.Application/1.0.0": {
+        "dependencies": {
+          "ActivityManagement.Domain": "1.0.0"
+        },
         "runtime": {
           "ActivityManagement.Application.dll": {}
+        }
+      },
+      "ActivityManagement.Domain/1.0.0": {
+        "runtime": {
+          "ActivityManagement.Domain.dll": {}
         }
       }
     }
   },
   "libraries": {
     "ActivityManagement.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ActivityManagement.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

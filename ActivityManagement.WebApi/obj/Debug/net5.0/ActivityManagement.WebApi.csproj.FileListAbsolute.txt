@@ -57,3 +57,5 @@ C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Deb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\obj\Debug\net5.0\ActivityManagement.WebApi.csproj.CopyComplete
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Humanizer.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.pdb

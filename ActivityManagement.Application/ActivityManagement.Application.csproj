@@ -8,4 +8,8 @@
     <ProjectReference Include="..\ActivityManagement.Domain\ActivityManagement.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Security\Jwt\" />
+  </ItemGroup>
+
 </Project>

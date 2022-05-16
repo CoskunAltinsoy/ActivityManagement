@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ActivityManagement.Domain\ActivityManagement.Domain.csproj" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.16" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Security\Jwt\" />
+    <ProjectReference Include="..\ActivityManagement.Domain\ActivityManagement.Domain.csproj" />
   </ItemGroup>
 
 </Project>

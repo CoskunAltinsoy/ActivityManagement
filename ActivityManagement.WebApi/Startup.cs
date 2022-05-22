@@ -55,7 +55,11 @@ namespace ActivityManagement.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseAuthentication();
+
             app.UseRouting();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }

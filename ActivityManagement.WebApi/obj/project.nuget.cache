@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Ow+3rE14uY00gmzI97/9IJWngBGAj0vguQEl1yVe8FQAyDfPzBgTsl4ioU/XFLoN+opcm08b+S+RloNBwakxkw==",
+  "dgSpecHash": "rd0cNbysxMKmpoK77zCAjiLsMziHgFclt1Knrydq0bdnhtDs618R7S0LG+PgD/xGOqKzQzIAQ+Y+4SjY2cdj/w==",
   "success": true,
   "projectFilePath": "C:\\Users\\cosku\\source\\repos\\ActivityManagement\\ActivityManagement.WebApi\\ActivityManagement.WebApi.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\cosku\\.nuget\\packages\\automapper\\11.0.1\\automapper.11.0.1.nupkg.sha512",
     "C:\\Users\\cosku\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\cosku\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.16\\microsoft.aspnetcore.authentication.jwtbearer.5.0.16.nupkg.sha512",
     "C:\\Users\\cosku\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

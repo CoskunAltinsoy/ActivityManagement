@@ -14,13 +14,14 @@ namespace ActivityManagement.Application.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly IUserRepository userRepository;
-        public AuthService(IUserRepository _userRepository)
+        private readonly IUserRepository _userRepository;
+        public AuthService(IUserRepository userRepository)
         {
             _userRepository = userRepository;
         }
         public Token Login(UserForLoginDto userForLoginDto)
         {
+            var userToCheck = _userRepository
             throw new NotImplementedException();
         }
 
@@ -37,7 +38,8 @@ namespace ActivityManagement.Application.Services
                 PasswordSalt = passwordSalt,
                 Role = userForRegisterDto.Role
             };
-            
+            _userRepository.Add(user);
+            return true;
         }
     }
 }

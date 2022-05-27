@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ActivityManagement.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
 {
     public interface IUserService
     {
+        public User GetByEmail(string email);
     }
 }

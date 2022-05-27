@@ -9,5 +9,6 @@ namespace ActivityManagement.Application.Interfaces.Repositories
 {
     public interface IUserRepository:IRepositoryBase<User>
     {
+        
     }
 }

@@ -11,8 +11,10 @@ namespace ActivityManagement.Infrastructure.Repositories
 {
     public class UserRepository : RepositoryBase<User>, IUserRepository
     {
-        public UserRepository(ActivityManagementDbContext context) : base(context)
+      
+        public UserRepository(ActivityManagementDbContext context):base(context)
         {
         }
+        
     }
 }

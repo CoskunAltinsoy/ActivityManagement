@@ -1,6 +1,7 @@
 ﻿using ActivityManagement.Application.Dtos;
 using ActivityManagement.Application.Interfaces.Repositories;
 using ActivityManagement.Application.Interfaces.ServiceInterfaces;
+using ActivityManagement.Application.Interfaces.UnitOfWorks;
 using ActivityManagement.Application.Security.Hashing;
 using ActivityManagement.Application.Security.Jwt;
 using ActivityManagement.Domain.Entities;
@@ -15,14 +16,24 @@ namespace ActivityManagement.Application.Services
     public class AuthService : IAuthService
     {
         private readonly IUserRepository _userRepository;
-        public AuthService(IUserRepository userRepository)
+        private readonly IUnitOfWork _unitOfWork;
+        public AuthService(IUserRepository userRepository, IUnitOfWork unitOfWork)
         {
             _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
         }
-        public Token Login(UserForLoginDto userForLoginDto)
+        public bool Login(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userRepository
-            throw new NotImplementedException();
+            var userToCheck = _userRepository.GetByEmail(userForLoginDto.Email);
+            if (userToCheck is null)
+            {
+                throw new Exception("Email bulunamadı");
+            }
+            if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
+            {
+                throw new Exception("Parola hatası");
+            }
+            return true;
         }
 
         public bool Register(UserForRegisterDto userForRegisterDto, string password)
@@ -38,7 +49,8 @@ namespace ActivityManagement.Application.Services
                 PasswordSalt = passwordSalt,
                 Role = userForRegisterDto.Role
             };
-            _userRepository.Add(user);
+            _unitOfWork.Users.Add(user);
+            _unitOfWork.SaveChanges();
             return true;
         }
     }

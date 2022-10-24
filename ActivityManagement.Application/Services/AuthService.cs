@@ -49,6 +49,7 @@ namespace ActivityManagement.Application.Services
                 PasswordSalt = passwordSalt,
                 Role = userForRegisterDto.Role
             };
+            //_userRepository.Add(user);
             _unitOfWork.Users.Add(user);
             _unitOfWork.SaveChanges();
             return true;

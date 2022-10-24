@@ -30,6 +30,7 @@ namespace ActivityManagement.Infrastructure.UnitOfWorks
             Companies = companies;
             Users = users;
             _context = context;
+            
         }
 
         public bool SaveChanges()

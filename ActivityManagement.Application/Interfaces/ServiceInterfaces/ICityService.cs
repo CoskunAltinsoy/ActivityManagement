@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
 {
-    public class ICityService
+    public interface ICityService
     {
     }
 }

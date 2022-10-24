@@ -9,6 +9,6 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
 {
     public interface IUserService
     {
-        public User GetByEmail(string email);
+       
     }
 }

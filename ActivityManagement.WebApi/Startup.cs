@@ -1,4 +1,11 @@
+using ActivityManagement.Application.Interfaces.Repositories;
+using ActivityManagement.Application.Interfaces.ServiceInterfaces;
+using ActivityManagement.Application.Interfaces.UnitOfWorks;
+using ActivityManagement.Application.Security.Jwt;
+using ActivityManagement.Application.Services;
 using ActivityManagement.Infrastructure.DependencyContainers;
+using ActivityManagement.Infrastructure.Repositories;
+using ActivityManagement.Infrastructure.UnitOfWorks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -26,7 +33,6 @@ namespace ActivityManagement.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddInfrastructureServices(Configuration);
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -45,6 +51,21 @@ namespace ActivityManagement.WebApi
                         (Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
                 };
             });
+
+            services.AddInfrastructureServices(Configuration);
+
+            services.AddScoped<TokenGenerator>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IAuthService, AuthService>();
+            services.AddScoped<IActivityService, ActivityService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ICityService, CityService>();
+          //  services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IActivityRepository, ActivityRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<ICompanyRepository, CompanyRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

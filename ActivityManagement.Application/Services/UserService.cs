@@ -11,10 +11,6 @@ namespace ActivityManagement.Application.Services
 {
     public class UserService : IUserService
     {
-        private readonly IUserRepository _userRepository;
-        public User GetByEmail(string email)
-        {
-            return _userRepository.Get(u => u.Email == email).First();
-        }
+       
     }
 }

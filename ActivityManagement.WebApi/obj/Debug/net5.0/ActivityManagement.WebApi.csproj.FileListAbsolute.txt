@@ -32,7 +32,6 @@ C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Deb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -59,3 +58,4 @@ C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Deb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Design.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.pdb
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

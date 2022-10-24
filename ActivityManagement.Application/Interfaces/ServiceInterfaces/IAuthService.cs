@@ -11,7 +11,7 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
     public interface IAuthService
     {
         bool Register(UserForRegisterDto userForRegisterDto, string password);
-        Token Login(UserForLoginDto userForLoginDto);
+        bool Login(UserForLoginDto userForLoginDto);
 
     }
 }

@@ -1,9 +1,11 @@
-﻿using ActivityManagement.Application.Dtos;
+﻿using ActivityManagement.Application.Constants;
+using ActivityManagement.Application.Dtos;
 using ActivityManagement.Application.Interfaces.Repositories;
 using ActivityManagement.Application.Interfaces.ServiceInterfaces;
 using ActivityManagement.Application.Interfaces.UnitOfWorks;
 using ActivityManagement.Application.Security.Hashing;
 using ActivityManagement.Application.Security.Jwt;
+using ActivityManagement.Application.Utilities.Results;
 using ActivityManagement.Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -22,22 +24,26 @@ namespace ActivityManagement.Application.Services
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
         }
-        public bool Login(UserForLoginDto userForLoginDto)
+        public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
             var userToCheck = _userRepository.GetByEmail(userForLoginDto.Email);
             if (userToCheck is null)
             {
-                throw new Exception("Email bulunamadı");
+                return new ErrorDataResult<User>(Messages.EmailHasNotFound);
             }
             if (!HashingHelper.VerifyPasswordHash(userForLoginDto.Password, userToCheck.PasswordHash, userToCheck.PasswordSalt))
             {
-                throw new Exception("Parola hatası");
+                return new ErrorDataResult<User>(Messages.IncorrectPassword);
             }
-            return true;
+            return new SuccessDataResult<User>(Messages.UserLoggedin);
         }
 
-        public bool Register(UserForRegisterDto userForRegisterDto, string password)
+        public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
+            if (!checkifEmailExist(userForRegisterDto.Email))
+            {
+                return new ErrorDataResult<User>(Messages.UserAlreadyExist);
+            }
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             User user = new User() 
@@ -52,6 +58,16 @@ namespace ActivityManagement.Application.Services
             //_userRepository.Add(user);
             _unitOfWork.Users.Add(user);
             _unitOfWork.SaveChanges();
+            return new SuccessDataResult<User>(user, Messages.UserResgistered);
+        }
+
+        private bool checkifEmailExist(string email)
+        {
+            var checkEmail = this._userRepository.GetByEmail(email);
+            if (checkEmail is not null)
+            {
+                return false;
+            }
             return true;
         }
     }

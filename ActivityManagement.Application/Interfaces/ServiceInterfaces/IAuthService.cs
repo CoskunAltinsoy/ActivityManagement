@@ -1,5 +1,7 @@
 ﻿using ActivityManagement.Application.Dtos;
 using ActivityManagement.Application.Security.Jwt;
+using ActivityManagement.Application.Utilities.Results;
+using ActivityManagement.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,8 +12,8 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
 {
     public interface IAuthService
     {
-        bool Register(UserForRegisterDto userForRegisterDto, string password);
-        bool Login(UserForLoginDto userForLoginDto);
+        IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password);
+        IDataResult<User> Login(UserForLoginDto userForLoginDto);
 
     }
 }

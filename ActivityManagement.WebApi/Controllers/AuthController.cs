@@ -18,6 +18,7 @@ namespace ActivityManagement.WebApi.Controllers
         [HttpPost]
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
+   
            _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             return Ok();
         }

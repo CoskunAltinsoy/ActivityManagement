@@ -26,7 +26,7 @@ namespace ActivityManagement.Application.Security.Jwt
             var token = new Token() {Expiration = exp};
             var authClaims = new List<Claim>
             {
-                new Claim(ClaimTypes.Name, user.Name),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Name),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };
 

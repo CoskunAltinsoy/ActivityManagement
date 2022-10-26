@@ -1,5 +1,8 @@
 ﻿using ActivityManagement.Application.Dtos;
 using ActivityManagement.Application.Interfaces.ServiceInterfaces;
+using ActivityManagement.Application.Utilities.Attributes;
+using ActivityManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,16 +21,16 @@ namespace ActivityManagement.WebApi.Controllers
         [HttpPost]
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
-   
            _authService.Register(userForRegisterDto, userForRegisterDto.Password);
             return Ok();
         }
 
+        [Authorize(nameof(Role.Admin))]
         [HttpPost]
         public IActionResult Login(UserForLoginDto userForLoginDto)
         {
             _authService.Login(userForLoginDto);
-            return Ok();
+            return Ok("giriş yapıldı");
         }
     }
 }

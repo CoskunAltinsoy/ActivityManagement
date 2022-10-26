@@ -59,3 +59,4 @@ C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Deb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.dll
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\ActivityManagement.Application.pdb
 C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\cosku\source\repos\ActivityManagement\ActivityManagement.WebApi\bin\Debug\net5.0\Newtonsoft.Json.dll

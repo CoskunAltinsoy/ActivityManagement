@@ -19,14 +19,16 @@ namespace ActivityManagement.Application.Services
     {
         private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
-        public AuthService(IUserRepository userRepository, IUnitOfWork unitOfWork)
+        private readonly ITokenHelper _tokenHelper;
+        public AuthService(IUserRepository userRepository, IUnitOfWork unitOfWork, ITokenHelper tokenHelper)
         {
             _userRepository = userRepository;
             _unitOfWork = unitOfWork;
+            _tokenHelper = tokenHelper;
         }
         public IDataResult<User> Login(UserForLoginDto userForLoginDto)
         {
-            var userToCheck = _userRepository.GetByEmail(userForLoginDto.Email);
+            var userToCheck = _unitOfWork.Users.GetByEmail(userForLoginDto.Email);
             if (userToCheck is null)
             {
                 return new ErrorDataResult<User>(Messages.EmailHasNotFound);
@@ -40,10 +42,6 @@ namespace ActivityManagement.Application.Services
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)
         {
-            if (!checkifEmailExist(userForRegisterDto.Email))
-            {
-                return new ErrorDataResult<User>(Messages.UserAlreadyExist);
-            }
             byte[] passwordHash, passwordSalt;
             HashingHelper.CreatePasswordHash(password, out passwordHash, out passwordSalt);
             User user = new User() 
@@ -61,14 +59,20 @@ namespace ActivityManagement.Application.Services
             return new SuccessDataResult<User>(user, Messages.UserResgistered);
         }
 
-        private bool checkifEmailExist(string email)
+        public IResult CheckIfUserExist(string email)
         {
             var checkEmail = this._userRepository.GetByEmail(email);
             if (checkEmail is not null)
             {
-                return false;
+                return new ErrorResult(Messages.UserAlreadyExist);
             }
-            return true;
+            return new SuccessResult();
+        }
+
+        public IDataResult<Token> CreateAccessToken(User user)
+        {
+            var token = _tokenHelper.CreateToken(user);
+            return new SuccessDataResult<Token>(token,"Token created");
         }
     }
 }

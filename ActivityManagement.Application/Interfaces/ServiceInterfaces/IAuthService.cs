@@ -14,6 +14,8 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
     {
         IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password);
         IDataResult<User> Login(UserForLoginDto userForLoginDto);
+        IResult CheckIfUserExist(string email);
+        IDataResult<Token> CreateAccessToken(User user);
 
     }
 }

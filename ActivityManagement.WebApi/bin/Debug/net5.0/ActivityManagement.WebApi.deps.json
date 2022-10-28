@@ -37,7 +37,6 @@
           "Microsoft.EntityFrameworkCore.Design": "5.0.16",
           "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
           "Microsoft.EntityFrameworkCore.Tools": "5.0.16",
-          "Newtonsoft.Json": "13.0.1",
           "Microsoft.AspNetCore.Antiforgery": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "5.0.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "5.0.0.0",
@@ -665,17 +664,6 @@
           "Microsoft.NETCore.Platforms": "3.1.0"
         }
       },
-      "Newtonsoft.Json/13.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "13.0.0.0",
-            "fileVersion": "13.0.1.25517"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {}
-        }
-      },
       "runtime.native.System/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1245,8 +1233,7 @@
       "ActivityManagement.Application/1.0.0": {
         "dependencies": {
           "ActivityManagement.Domain": "1.0.0",
-          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.16",
-          "Newtonsoft.Json": "13.0.1"
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "5.0.16"
         },
         "runtime": {
           "ActivityManagement.Application.dll": {}
@@ -1256,9 +1243,6 @@
         }
       },
       "ActivityManagement.Domain/1.0.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "13.0.1"
-        },
         "runtime": {
           "ActivityManagement.Domain.dll": {}
         },
@@ -1270,8 +1254,7 @@
         "dependencies": {
           "ActivityManagement.Application": "1.0.0",
           "ActivityManagement.Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16",
-          "Newtonsoft.Json": "13.0.1"
+          "Microsoft.EntityFrameworkCore.SqlServer": "5.0.16"
         },
         "runtime": {
           "ActivityManagement.Infrastructure.dll": {}
@@ -3190,13 +3173,6 @@
       "sha512": "sha512-mtVirZr++rq+XCDITMUdnETD59XoeMxSpLRIII7JRI6Yj0LEDiO1pPn0ktlnIj12Ix8bfvQqQDMMIF9wC98oCA==",
       "path": "microsoft.win32.systemevents/4.7.0",
       "hashPath": "microsoft.win32.systemevents.4.7.0.nupkg.sha512"
-    },
-    "Newtonsoft.Json/13.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
-      "path": "newtonsoft.json/13.0.1",
-      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
     },
     "runtime.native.System/4.3.0": {
       "type": "package",

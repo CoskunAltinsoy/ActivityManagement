@@ -1,6 +1,6 @@
 ﻿using ActivityManagement.Application.Dtos;
 using ActivityManagement.Application.Interfaces.ServiceInterfaces;
-using ActivityManagement.Application.Utilities.Attributes;
+using ActivityManagement.Application.Security.Authorization;
 using ActivityManagement.Domain.Entities;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -21,14 +21,25 @@ namespace ActivityManagement.WebApi.Controllers
         [HttpPost]
         public IActionResult Register(UserForRegisterDto userForRegisterDto)
         {
-           _authService.Register(userForRegisterDto, userForRegisterDto.Password);
-            return Ok();
+            var userExist = _authService.CheckIfUserExist(userForRegisterDto.Email);
+            if (!userExist.Success)
+            {
+                return BadRequest(userExist.Message);
+            }
+            var registerResult = _authService.Register(userForRegisterDto, userForRegisterDto.Password);
+            var result = _authService.CreateAccessToken(registerResult.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
         }
 
-        [Authorize(nameof(Role.Admin))]
+        [AuthorizeRoleAttribute(Role.User)]
         [HttpPost]
         public IActionResult Login(UserForLoginDto userForLoginDto)
         {
+            
             _authService.Login(userForLoginDto);
             return Ok("giriş yapıldı");
         }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace ActivityManagement.Application.Security.Jwt
 {
-    public class TokenGenerator
+    public class TokenGenerator:ITokenHelper
     {
         private readonly IConfiguration _configuration;
         public TokenGenerator(IConfiguration configuration)

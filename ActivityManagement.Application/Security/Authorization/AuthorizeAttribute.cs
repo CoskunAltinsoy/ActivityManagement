@@ -12,11 +12,11 @@ using System.Threading.Tasks;
 namespace ActivityManagement.Application.Security.Authorization
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
-    public class AuthorizeRoleAttribute : AuthorizeAttribute
+    public class AuthorizeRolesAttribute : AuthorizeAttribute
     {  
-        public AuthorizeRoleAttribute( params Role[] roles)
+        public AuthorizeRolesAttribute(params Role[] roles):base()
         {
-            Roles = string.Join("", roles);
+            Roles = string.Join(",", roles);
         }
         
        

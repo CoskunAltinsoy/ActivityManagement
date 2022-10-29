@@ -1,4 +1,5 @@
-﻿using ActivityManagement.Domain.Entities;
+﻿using ActivityManagement.Application.Interfaces.UnitOfWorks;
+using ActivityManagement.Domain.Entities;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
@@ -15,18 +16,21 @@ namespace ActivityManagement.Application.Security.Jwt
     public class TokenGenerator:ITokenHelper
     {
         private readonly IConfiguration _configuration;
-        public TokenGenerator(IConfiguration configuration)
+       // private readonly IUnitOfWork _unitOfWork;
+        public TokenGenerator(IConfiguration configuration, IUnitOfWork unitOfWork)
         {
             _configuration = configuration;
+            //_unitOfWork = unitOfWork;
         }
 
         public Token CreateToken(User user)
         {
+            //var userEmail = _unitOfWork.Users.GetByEmail(user.Email);
             var exp = DateTime.Now.AddMinutes(30);
             var token = new Token() {Expiration = exp};
             var authClaims = new List<Claim>
             {
-                new Claim(JwtRegisteredClaimNames.UniqueName, user.Name),
+                new Claim(JwtRegisteredClaimNames.UniqueName, user.Email),
                 new Claim(ClaimTypes.Role, user.Role.ToString())
             };
 

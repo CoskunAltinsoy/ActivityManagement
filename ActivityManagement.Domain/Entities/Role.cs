@@ -11,9 +11,9 @@ namespace ActivityManagement.Domain.Entities
  
     public enum Role 
     {
-        Admin,
-        User,
-        Organizer,
-        Company
+        Admin = 1,
+        User = 2,
+        Organizer = 3,
+        Company = 4
     }
 }

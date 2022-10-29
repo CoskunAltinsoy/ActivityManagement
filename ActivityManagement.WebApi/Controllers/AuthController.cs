@@ -35,13 +35,22 @@ namespace ActivityManagement.WebApi.Controllers
             return BadRequest(result.Message);
         }
 
-        [AuthorizeRoleAttribute(Role.User)]
+        [AuthorizeRoles(Role.Admin)]
         [HttpPost]
         public IActionResult Login(UserForLoginDto userForLoginDto)
         {
             
-            _authService.Login(userForLoginDto);
-            return Ok("giriş yapıldı");
+            var userToLogin = _authService.Login(userForLoginDto);
+            if (!userToLogin.Success)
+            {
+                return BadRequest(userToLogin.Message);
+            }
+            var result = _authService.CreateAccessToken(userToLogin.Data);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+            return BadRequest(result.Message);
         }
     }
 }

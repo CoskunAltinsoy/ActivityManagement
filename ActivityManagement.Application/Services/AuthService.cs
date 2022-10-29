@@ -37,7 +37,7 @@ namespace ActivityManagement.Application.Services
             {
                 return new ErrorDataResult<User>(Messages.IncorrectPassword);
             }
-            return new SuccessDataResult<User>(Messages.UserLoggedin);
+            return new SuccessDataResult<User>(userToCheck, Messages.UserLoggedin);
         }
 
         public IDataResult<User> Register(UserForRegisterDto userForRegisterDto, string password)

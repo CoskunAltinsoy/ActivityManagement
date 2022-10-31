@@ -16,5 +16,11 @@ namespace ActivityManagement.Application.Constants
 
         public static string EmailHasNotFound = "This email has not found";
         public static string IncorrectPassword = "This password is incorrect";
+
+        public static string CategoryAdded =  "Category added";
+        public static string CategoryDeleted = "Category deleted";
+        public static string CategoryUpdated = "Category updated";
+        public static string GetAllCategoryId = "Category id got";
+        public static string GetCategoryId = "Category got";
     }
 }

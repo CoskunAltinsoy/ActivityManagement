@@ -11,7 +11,7 @@ namespace ActivityManagement.Application.Interfaces.Repositories
     public interface IRepositoryBase<T> where T : BaseEntity
     {
         List<T> GetAll();
-        List<T> Get(Expression<Func<T, bool>> filter);
+        T Get(Expression<Func<T, bool>> filter);
         T GetById(int id);
         void Update(T entity);
         void Delete(T entity);

@@ -28,9 +28,9 @@ namespace ActivityManagement.Infrastructure.Repositories
             _dbSet.Remove(entity);
         }
 
-        public List<T> Get(Expression<Func<T, bool>> filter)
+        public T Get(Expression<Func<T, bool>> filter)
         {
-            return _dbSet.Where(filter).Where(g => g.IsDeleted == false).ToList();
+            return _dbSet.Where(filter).Where(g => g.IsDeleted == false).First();
         }
 
         public List<T> GetAll()

@@ -17,12 +17,12 @@ namespace ActivityManagement.Application.Services
 {
     public class AuthService : IAuthService
     {
-        private readonly IUserRepository _userRepository;
+        //private readonly IUserRepository _userRepository;
         private readonly IUnitOfWork _unitOfWork;
         private readonly ITokenHelper _tokenHelper;
         public AuthService(IUserRepository userRepository, IUnitOfWork unitOfWork, ITokenHelper tokenHelper)
         {
-            _userRepository = userRepository;
+           // _userRepository = userRepository;
             _unitOfWork = unitOfWork;
             _tokenHelper = tokenHelper;
         }
@@ -61,7 +61,8 @@ namespace ActivityManagement.Application.Services
 
         public IResult CheckIfUserExist(string email)
         {
-            var checkEmail = this._userRepository.GetByEmail(email);
+            //var checkEmail = this._userRepository.GetByEmail(email);
+            var checkEmail = this._unitOfWork.Users.GetByEmail(email);
             if (checkEmail is not null)
             {
                 return new ErrorResult(Messages.UserAlreadyExist);

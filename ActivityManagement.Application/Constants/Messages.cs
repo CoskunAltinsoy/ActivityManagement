@@ -22,5 +22,11 @@ namespace ActivityManagement.Application.Constants
         public static string CategoryUpdated = "Category updated";
         public static string GetAllCategoryId = "Category id got";
         public static string GetCategoryId = "Category got";
+
+        public static string CityAdded = "City added";
+        public static string CityDeleted = "City Deleted";
+        public static string CityUpdated = "City Updated";
+        public static string CitiesGot = "City Got";
+        public static string CityGot = "Cities Got"; 
     }
 }

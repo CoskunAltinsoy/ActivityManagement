@@ -1,5 +1,7 @@
 ﻿using ActivityManagement.Application.Interfaces.ServiceInterfaces;
+using ActivityManagement.Application.Security.Authorization;
 using ActivityManagement.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,6 +17,7 @@ namespace ActivityManagement.WebApi.Controllers
             _categoryService = categoryService;
         }
 
+        [AuthorizeRoles(Role.Admin)]
         [HttpPost]
         public IActionResult Add(Category category)
         {
@@ -26,6 +29,7 @@ namespace ActivityManagement.WebApi.Controllers
             return BadRequest(categoryAdded);
         }
 
+        [AuthorizeRoles(Role.Admin)]
         [HttpDelete]
         public IActionResult Delete(Category category)
         {
@@ -37,6 +41,7 @@ namespace ActivityManagement.WebApi.Controllers
             return BadRequest(categoryDeleted);
         }
 
+        [AuthorizeRoles(Role.Admin)]
         [HttpPut]
         public IActionResult Update(Category category)
         {

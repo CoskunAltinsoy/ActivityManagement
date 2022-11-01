@@ -27,7 +27,13 @@ namespace ActivityManagement.Application.Services
 
         public IResult Delete(Category category)
         {
-            _unitOfWork.Categories.Delete(category);
+            var deleteCategory = _unitOfWork.Categories.GetById(category.Id);
+            if (deleteCategory is null)
+            {
+                return new SuccessResult(Messages.categoryNotFound);
+            }
+            deleteCategory.IsDeleted = true;
+            _unitOfWork.Categories.Update(deleteCategory);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.CategoryDeleted);
         }

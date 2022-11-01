@@ -27,7 +27,13 @@ namespace ActivityManagement.Application.Services
 
         public IResult Delete(City city)
         {
-            _unitOfWork.Cities.Delete(city);
+            var deleteCity = _unitOfWork.Cities.GetById(city.Id);
+            if (deleteCity is null)
+            {
+                return new SuccessResult(Messages.CityNotFound);
+            }
+            deleteCity.IsDeleted = true;
+            _unitOfWork.Cities.Update(deleteCity);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.CityDeleted);
         }

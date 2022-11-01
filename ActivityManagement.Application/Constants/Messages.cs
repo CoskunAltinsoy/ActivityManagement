@@ -9,6 +9,7 @@ namespace ActivityManagement.Application.Constants
 {
     public static class Messages
     {
+        internal static readonly string categoryNotFound;
         public static string UserAlreadyExist = "This user already exist";
         public static string SuccesfulRegistration = "registration was successful";
         public static string UserResgistered = "User has registered successfully";
@@ -27,6 +28,7 @@ namespace ActivityManagement.Application.Constants
         public static string CityDeleted = "City Deleted";
         public static string CityUpdated = "City Updated";
         public static string CitiesGot = "City Got";
-        public static string CityGot = "Cities Got"; 
+        public static string CityGot = "Cities Got";
+        internal static string CityNotFound;
     }
 }

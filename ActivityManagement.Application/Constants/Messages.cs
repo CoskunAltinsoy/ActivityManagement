@@ -29,6 +29,13 @@ namespace ActivityManagement.Application.Constants
         public static string CityUpdated = "City Updated";
         public static string CitiesGot = "City Got";
         public static string CityGot = "Cities Got";
-        internal static string CityNotFound;
+        public static string CityNotFound;
+
+        public static string ActivityAdded;
+        public static string ActivityNotFound;
+        public static string ActivityDeleted;
+        public static string ActivityUpdated;
+        public static string ActivityGot;
+        internal static string ActivitiesGot;
     }
 }

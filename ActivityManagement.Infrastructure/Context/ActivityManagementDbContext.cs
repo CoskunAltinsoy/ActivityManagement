@@ -19,5 +19,6 @@ namespace ActivityManagement.Infrastructure.Context
         public DbSet<City> Cities { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<ActivityUser> ActivityUsers { get; set; }
     }
 }

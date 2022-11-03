@@ -53,20 +53,20 @@ namespace ActivityManagement.WebApi
 
             services.AddInfrastructureServices(Configuration);
 
-            services.AddScoped<TokenGenerator>();
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<IAuthService, AuthService>();
-            services.AddScoped<IActivityService, ActivityService>();
-            services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<ICityService, CityService>();
-          //  services.AddScoped<ICompanyService, CompanyService>();
-            services.AddScoped<IUserRepository, UserRepository>();
-            services.AddScoped<IActivityRepository, ActivityRepository>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<ICityRepository, CityRepository>();
-            services.AddScoped<ICompanyRepository, CompanyRepository>();
+          //  services.AddScoped<TokenGenerator>();
+          //  services.AddScoped<IUnitOfWork, UnitOfWork>();
+          //  services.AddScoped<IAuthService, AuthService>();
+          //  services.AddScoped<IActivityService, ActivityService>();
+          //  services.AddScoped<ICategoryService, CategoryService>();
+          //  services.AddScoped<ICityService, CityService>();
+          ////  services.AddScoped<ICompanyService, CompanyService>();
+          //  services.AddScoped<IUserRepository, UserRepository>();
+          //  services.AddScoped<IActivityRepository, ActivityRepository>();
+          //  services.AddScoped<ICategoryRepository, CategoryRepository>();
+          //  services.AddScoped<ICityRepository, CityRepository>();
+          //  services.AddScoped<ICompanyRepository, CompanyRepository>();
 
-            services.AddScoped<ITokenHelper, TokenGenerator>();
+          //  services.AddScoped<ITokenHelper, TokenGenerator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

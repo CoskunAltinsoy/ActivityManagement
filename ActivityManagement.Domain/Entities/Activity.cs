@@ -10,7 +10,7 @@ namespace ActivityManagement.Domain.Entities
     {
         public string ActivityName { get; set; }
         public DateTime ActivityDate { get; set; }
-        public DateTime ActivityDeadline { get; set; }
+        public DateTime? ActivityDeadline { get; set; } 
         public string ActivityDescription { get; set; }
         public bool IsActive { get; set; }
         public string Quota { get; set; }

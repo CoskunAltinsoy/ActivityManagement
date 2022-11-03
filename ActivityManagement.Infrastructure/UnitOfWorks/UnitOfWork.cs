@@ -22,15 +22,18 @@ namespace ActivityManagement.Infrastructure.UnitOfWorks
 
         public IUserRepository Users { get; }
 
+        public IActivityUserRepository ActivityUsers { get; }
 
         public UnitOfWork(IActivityRepository activities, ICategoryRepository categories, ICityRepository cities,
-                          ICompanyRepository companies, IUserRepository users,ActivityManagementDbContext context)
+                          ICompanyRepository companies, IUserRepository users, IActivityUserRepository activityUsers,
+                          ActivityManagementDbContext context)
         {
             Activities = activities;
             Categories = categories;
             Cities = cities;
             Companies = companies;
             Users = users;
+            ActivityUsers = activityUsers;
             _context = context;
             
         }

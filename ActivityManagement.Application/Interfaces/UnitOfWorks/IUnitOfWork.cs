@@ -14,6 +14,7 @@ namespace ActivityManagement.Application.Interfaces.UnitOfWorks
         ICityRepository Cities { get; }
         ICompanyRepository Companies { get; }
         IUserRepository Users { get; }
+        IActivityUserRepository ActivityUsers { get; }  
         bool SaveChanges();
     }
 }

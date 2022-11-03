@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace ActivityManagement.Domain.Entities
 {
-    internal class ActivityUser
+    public class ActivityUser:Entity
     {
+        public int ActivitiesId { get; set; }
+        public Activity Activity { get; set; }
+        public int UsersId { get; set; }
+        public User User { get; set; }
     }
 }

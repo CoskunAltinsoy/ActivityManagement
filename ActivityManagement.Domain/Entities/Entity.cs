@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ActivityManagement.Domain.Entities
 {
-    internal interface IEntity
+    public class Entity:BaseEntity
     {
     }
 }

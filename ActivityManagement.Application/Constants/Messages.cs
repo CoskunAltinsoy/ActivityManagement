@@ -37,5 +37,11 @@ namespace ActivityManagement.Application.Constants
         public static string ActivityUpdated;
         public static string ActivityGot;
         internal static string ActivitiesGot;
+        internal static string ActivityUserAdded;
+        internal static string ActivityUserNotFound;
+        internal static string ActivityUserDeleted;
+        internal static string ActivityUserGot;
+        internal static string ActivityUsersGot;
+        internal static string ActivityUserUpdated;
     }
 }

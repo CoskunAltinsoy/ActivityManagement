@@ -44,7 +44,7 @@ namespace ActivityManagement.Infrastructure.Migrations
                     b.Property<DateTime>("ActivityDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("ActivityDeadline")
+                    b.Property<DateTime?>("ActivityDeadline")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("ActivityDescription")
@@ -87,6 +87,40 @@ namespace ActivityManagement.Infrastructure.Migrations
                     b.HasIndex("CityId");
 
                     b.ToTable("Activities");
+                });
+
+            modelBuilder.Entity("ActivityManagement.Domain.Entities.ActivityUser", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ActivitiesId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ActivityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<int?>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UsersId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActivityId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("ActivityUsers");
                 });
 
             modelBuilder.Entity("ActivityManagement.Domain.Entities.Category", b =>
@@ -247,6 +281,21 @@ namespace ActivityManagement.Infrastructure.Migrations
                     b.Navigation("Category");
 
                     b.Navigation("City");
+                });
+
+            modelBuilder.Entity("ActivityManagement.Domain.Entities.ActivityUser", b =>
+                {
+                    b.HasOne("ActivityManagement.Domain.Entities.Activity", "Activity")
+                        .WithMany()
+                        .HasForeignKey("ActivityId");
+
+                    b.HasOne("ActivityManagement.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Activity");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("ActivityUser", b =>

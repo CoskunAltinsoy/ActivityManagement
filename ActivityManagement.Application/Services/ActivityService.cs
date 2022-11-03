@@ -32,6 +32,7 @@ namespace ActivityManagement.Application.Services
             {
                 return new SuccessResult(Messages.ActivityNotFound);
             }
+            deleteActivity.IsDeleted = true;
             _unitOfWork.Activities.Update(deleteActivity);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.ActivityDeleted);
@@ -54,6 +55,19 @@ namespace ActivityManagement.Application.Services
             _unitOfWork.Activities.Update(activity);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.ActivityUpdated);
+        }
+
+        private bool CheckActivityTime(DateTime dateTime, int id)
+        {
+            Activity activity = _unitOfWork.Activities.GetById(id);
+            DateTime time = DateTime.Now;
+            //activity.ActivityDeadline = (activity.ActivityDate - time).Days;
+            //if (activity.)
+            //{
+
+            //}
+            return true;
+
         }
     }
 }

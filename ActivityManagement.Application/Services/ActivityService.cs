@@ -32,6 +32,10 @@ namespace ActivityManagement.Application.Services
             {
                 return new SuccessResult(Messages.ActivityNotFound);
             }
+            if (!CheckActivityTime(activity.Id))
+            {
+                return new SuccessResult(Messages.LessThanFiveDays);
+            }
             deleteActivity.IsDeleted = true;
             _unitOfWork.Activities.Update(deleteActivity);
             _unitOfWork.SaveChanges();
@@ -52,20 +56,24 @@ namespace ActivityManagement.Application.Services
 
         public IResult Update(Activity activity)
         {
+            if (!CheckActivityTime(activity.Id))
+            {
+                return new SuccessResult(Messages.LessThanFiveDays);
+            }
             _unitOfWork.Activities.Update(activity);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.ActivityUpdated);
         }
 
-        private bool CheckActivityTime(DateTime dateTime, int id)
+        private bool CheckActivityTime(int id)
         {
             Activity activity = _unitOfWork.Activities.GetById(id);
             DateTime time = DateTime.Now;
-            //activity.ActivityDeadline = (activity.ActivityDate - time).Days;
-            //if (activity.)
-            //{
-
-            //}
+            activity.ActivityDeadline = Convert.ToDateTime(activity.ActivityDate - time);
+            if (activity.ActivityDeadline.Day < 5)
+            {
+                return false;
+            }
             return true;
 
         }

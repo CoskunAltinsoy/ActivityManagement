@@ -43,5 +43,6 @@ namespace ActivityManagement.Application.Constants
         internal static string ActivityUserGot;
         internal static string ActivityUsersGot;
         internal static string ActivityUserUpdated;
+        internal static string LessThanFiveDays;
     }
 }

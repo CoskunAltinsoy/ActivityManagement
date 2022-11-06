@@ -52,6 +52,7 @@ namespace ActivityManagement.WebApi.Controllers
             return BadRequest(activityUpdated);
         }
 
+        [AuthorizeRoles(Role.User)]
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -63,6 +64,7 @@ namespace ActivityManagement.WebApi.Controllers
             return BadRequest(activityGetAll);
         }
 
+        [AuthorizeRoles(Role.User)]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {

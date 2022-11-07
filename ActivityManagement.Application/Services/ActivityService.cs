@@ -54,6 +54,18 @@ namespace ActivityManagement.Application.Services
             return new SuccessDataResult<List<Activity>>(getActivity, Messages.ActivitiesGot);
         }
 
+        public IDataResult<Activity> GetCategory(int id)
+        {
+            var getCategory = _unitOfWork.Activities.Get(a => a.CategoryId == id);
+            return new SuccessDataResult<Activity>(getCategory, Messages.ActivityGot);
+        }
+
+        public IDataResult<Activity> GetCity(int id)
+        {
+            var getCategory = _unitOfWork.Activities.Get(a => a.CityId == id);
+            return new SuccessDataResult<Activity>(getCategory, Messages.ActivityGot);
+        }
+
         public IResult Update(Activity activity)
         {
             if (!CheckActivityTime(activity.Id))

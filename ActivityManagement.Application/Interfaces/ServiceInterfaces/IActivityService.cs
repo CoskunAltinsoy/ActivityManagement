@@ -15,5 +15,7 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
         IResult Update(Activity activity);
         IDataResult<List<Activity>> GetAll();
         IDataResult<Activity> Get(int id);
+        IDataResult<Activity> GetCategory(int id);
+        IDataResult<Activity> GetCity(int id);
     }
 }

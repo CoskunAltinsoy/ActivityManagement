@@ -9,5 +9,7 @@ namespace ActivityManagement.Application.Interfaces.Repositories
 {
     public interface IActivityUserRepository:IRepositoryBase<ActivityUser>
     {
+        bool AddUserToActivity(int userId, int activityId); 
+        Activity GetActivityUser(int activityId);
     }
 }

@@ -15,5 +15,6 @@ namespace ActivityManagement.Application.Interfaces.ServiceInterfaces
         IResult Update(ActivityUser activityUser);
         IDataResult<List<ActivityUser>> GetAll();
         IDataResult<ActivityUser> Get(int id);
+  
     }
 }

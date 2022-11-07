@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ActivityManagement.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class ActivitiesController : ControllerBase
     {
@@ -16,7 +16,7 @@ namespace ActivityManagement.WebApi.Controllers
             _activityService = activityService;
         }
 
-        [AuthorizeRoles(Role.Organizer)]
+      //  [AuthorizeRoles(Role.Organizer)]
         [HttpPost]
         public IActionResult Add(Activity activity)
         {
@@ -74,6 +74,30 @@ namespace ActivityManagement.WebApi.Controllers
                 return Ok(activityGetAll);
             }
             return BadRequest(activityGetAll.Message);
+        }
+
+        [AuthorizeRoles(Role.User)]
+        [HttpGet("{id}")]
+        public IActionResult GetActivityCity(int id)
+        {
+            var activityGetCity = _activityService.GetCity(id);
+            if (activityGetCity.Success) 
+            {
+                return Ok(activityGetCity);
+            }
+            return BadRequest(activityGetCity.Message);
+        }
+
+        [AuthorizeRoles(Role.User)]
+        [HttpGet("{id}")]
+        public IActionResult GetActivityCategory(int id)
+        {
+            var activityGetCategory = _activityService.GetCategory(id);
+            if (activityGetCategory.Success)
+            {
+                return Ok(activityGetCategory);
+            }
+            return BadRequest(activityGetCategory.Message);
         }
     }
 }

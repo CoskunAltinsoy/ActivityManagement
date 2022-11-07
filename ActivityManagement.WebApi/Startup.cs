@@ -53,7 +53,8 @@ namespace ActivityManagement.WebApi
 
             services.AddInfrastructureServices(Configuration);
 
-            services.AddScoped<TokenGenerator>();
+           // services.AddScoped<TokenGenerator>();
+            services.AddScoped<IActivityUserService, ActivityUserService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IActivityService, ActivityService>();
@@ -61,12 +62,13 @@ namespace ActivityManagement.WebApi
             services.AddScoped<ICityService, CityService>();
             //  services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IActivityUserRepository, ActivityUserRepository>();
             services.AddScoped<IActivityRepository, ActivityRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<ICompanyRepository, CompanyRepository>();
 
-            services.AddScoped<ITokenHelper, TokenGenerator>();
+            services.AddTransient<ITokenHelper, TokenGenerator>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

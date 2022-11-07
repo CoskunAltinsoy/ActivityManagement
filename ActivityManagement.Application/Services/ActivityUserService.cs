@@ -22,8 +22,9 @@ namespace ActivityManagement.Application.Services
 
         public IResult Add(ActivityUser activityUser)
         {
-            _unitOfWork.ActivityUsers.Add(activityUser);
-            _unitOfWork.SaveChanges();
+            _unitOfWork.ActivityUsers.AddUserToActivity(activityUser.ActivitiesId, activityUser.UsersId);
+            //_unitOfWork.ActivityUsers.Add(activityUser);
+            //_unitOfWork.SaveChanges();
             return new SuccessResult(Messages.ActivityUserAdded);
         }
 
@@ -57,6 +58,14 @@ namespace ActivityManagement.Application.Services
             _unitOfWork.ActivityUsers.Update(activityUser);
             _unitOfWork.SaveChanges();
             return new SuccessResult(Messages.ActivityUserUpdated);
+        }
+
+        private bool CheckUserQuota()
+        {
+            //if (_unitOfWork.ActivityUsers.) 
+            //{ 
+            //}
+            return true;
         }
 
        
